@@ -27,27 +27,15 @@ function App() {
                   <Link to="/">
                     <Room/>
                   </Link>
-                  <h2>
-                    A social exercise game you can play while social distancing.
-                  </h2>
-                  <img
-                    className="demo"
-                    alt="Animated demo of PoseParty."
-                    height="300"
-                    src={`${process.env.PUBLIC_URL}/img/poseparty.gif`}
-                  />
+                 
+                  
                   
                   
                 </div>
-                {/* <h1 className="display" style={{marginBottom: '20px'}}>Demo</h1> */}
-                {/* <iframe width="640" height="360" src="https://www.youtube.com/embed/1ielsQyZPLU" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="true"></iframe> */}
+               
               </Route>
             </Switch>
-            <div className="footer">
-              {/* <p>© PoseParty</p> */}
-              {/* <br/> */}
-              
-            </div>
+           
           </div>
         </Router>
       </ToastProvider>
