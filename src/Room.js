@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 
 import { useToasts } from "react-toast-notifications";
-import Video from "twilio-video";
+
 
 import PoseNet from "./posenet/components/PoseNet";
 
@@ -118,7 +118,7 @@ function Room() {
     <div className="room">
       <div className="header">
         <h1 className="title display">
-          <a href="/">PoseParty</a>
+          <a href="/">FitMe</a>
         </h1>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       </div>
@@ -158,6 +158,7 @@ function Room() {
                   onEstimate={(pose) => handlePose(pose)}
                   drawSkeleton={!ready}
                 />
+               
                 <DisplayScore />
               </>
             }
