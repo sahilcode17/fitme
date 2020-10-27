@@ -50,6 +50,18 @@ function Room() {
     console.log(correctFrames);
     console.log(totalFrames);
     console.log(score);
+    if (totalFrames < 1000){
+        setImageName("tadasana.png");
+        setImagePose(POSE_MAP["tadasana.png"]);
+    }
+    if (totalFrames>1000 & totalFrames < 2000){
+        setImageName("chairpose.jpg")
+        setImagePose(POSE_MAP["chairpose.jpg"])
+    }
+    if (totalFrames>2000 & totalFrames< 3000){
+        setImageName("dance.png")
+        setImagePose(POSE_MAP["dance.png"])
+    }
     // Should probably include round number here if we have the frame counts as dependencies
   }, [correctFrames, totalFrames]);
 
