@@ -44,26 +44,26 @@ function Room() {
   }, []);
 
   // Submit Score
+  const [i, seti] = useState(0);
+  const poses = ['chairpose.jpg', 'dance.png', 'eagle.png', 'garland.png', 'gate.png', 'half-moon.png', 'parivrtta-trikonasana.png', 'tadasana.png', ' vrksasana.png'];
   useEffect(() => {
+    seti(0);
+    setCorrectFrames(0);
+    setTotalFrames(0);
     const score = Math.round((correctFrames / totalFrames) * 10000);
     console.log("scoring");
     console.log(correctFrames);
     console.log(totalFrames);
     console.log(score);
-    if (totalFrames < 1000){
-        setImageName("tadasana.png");
-        setImagePose(POSE_MAP["tadasana.png"]);
-    }
-    if (totalFrames>1000 & totalFrames < 2000){
-        setImageName("chairpose.jpg")
-        setImagePose(POSE_MAP["chairpose.jpg"])
-    }
-    if (totalFrames>2000 & totalFrames< 3000){
-        setImageName("dance.png")
-        setImagePose(POSE_MAP["dance.png"])
-    }
-    // Should probably include round number here if we have the frame counts as dependencies
-  }, [correctFrames, totalFrames]);
+    var changePoses = setInterval(function () {
+      seti(i + 1);
+      if (i === poses.length) {
+        clearInterval(changePoses);
+      }
+      setImageName(poses[i]);
+      setImagePose(POSE_MAP[poses[i]]);
+    }, 10000)
+  }, [correctFrames, totalFrames, i, poses]);
 
   /* ============================================ TWILIO ============================================ */
 
@@ -170,7 +170,7 @@ function Room() {
                   onEstimate={(pose) => handlePose(pose)}
                   drawSkeleton={!ready}
                 />
-               
+
                 <DisplayScore />
               </>
             }
