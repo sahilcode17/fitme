@@ -17,10 +17,11 @@ const SIMILARITY_THRESHOLD_EXCELLENT = 0.25;
 const SIMILARITY_THRESHOLD_GOOD = 0.55;
 const SIMILARITY_THRESHOLD_OKAY = 0.8;
 
+let i=0;
+
 function Room() {
   const { addToast } = useToasts();
   /* ============================================ INIT STATE ============================================ */
-
   // Game State
   const [ready, setReady] = useState(false);
   const [correctFrames, setCorrectFrames] = useState(0);
@@ -36,34 +37,38 @@ function Room() {
   /* ============================================ WEBSOCKETS ============================================ */
 
   // Log message output and change app state
-  useEffect(() => {
-    setCorrectFrames(0);
-    setTotalFrames(0);
-    setImageName("tadasana.png");
-    setImagePose(POSE_MAP["tadasana.png"]);
-  }, []);
+  // useEffect(() => {
+  //   setCorrectFrames(0);
+  //   setTotalFrames(0);
+  //   setImageName("tadasana.png");
+  //   setImagePose(POSE_MAP["tadasana.png"]);
+  // }, []);
 
   // Submit Score
-  const [i, seti] = useState(0);
+  //const [i, seti] = useState(0);
+
   const poses = ['chairpose.jpg', 'dance.png', 'eagle.png', 'garland.png', 'gate.png', 'half-moon.png', 'parivrtta-trikonasana.png', 'tadasana.png', ' vrksasana.png'];
   useEffect(() => {
-    seti(0);
-    setCorrectFrames(0);
-    setTotalFrames(0);
+    //seti(0);
+    // setCorrectFrames(0);
+    // setTotalFrames(0);
     const score = Math.round((correctFrames / totalFrames) * 10000);
-    console.log("scoring");
-    console.log(correctFrames);
-    console.log(totalFrames);
-    console.log(score);
+    // console.log("scoring");
+    // console.log(correctFrames);
+    // console.log(totalFrames);
+    // console.log(score);
     var changePoses = setInterval(function () {
-      seti(i + 1);
-      if (i === poses.length) {
+      
+      //seti(i+1);
+      i=i+1
+      console.log("i : ",i);
+      if (i === poses.length-1) {
         clearInterval(changePoses);
       }
       setImageName(poses[i]);
       setImagePose(POSE_MAP[poses[i]]);
     }, 10000)
-  }, [correctFrames, totalFrames, i, poses]);
+  }, []);
 
   /* ============================================ TWILIO ============================================ */
 
@@ -87,18 +92,18 @@ function Room() {
   };
 
   // UpdateScore
-  useEffect(() => {
-    setTotalFrames(totalFrames + 1);
-    if (similarity <= SIMILARITY_THRESHOLD_EXCELLENT) {
-      setCorrectFrames(correctFrames + 1);
-    } else if (similarity <= SIMILARITY_THRESHOLD_GOOD) {
-      setCorrectFrames(correctFrames + 0.6);
-    } else if (similarity <= SIMILARITY_THRESHOLD_OKAY) {
-      setCorrectFrames(correctFrames + 0.3);
-    } else {
-      setCorrectFrames(correctFrames + 0.1);
-    }
-  }, [similarity, totalFrames, correctFrames]);
+  // useEffect(() => {
+  //   setTotalFrames(totalFrames + 1);
+  //   if (similarity <= SIMILARITY_THRESHOLD_EXCELLENT) {
+  //     setCorrectFrames(correctFrames + 1);
+  //   } else if (similarity <= SIMILARITY_THRESHOLD_GOOD) {
+  //     setCorrectFrames(correctFrames + 0.6);
+  //   } else if (similarity <= SIMILARITY_THRESHOLD_OKAY) {
+  //     setCorrectFrames(correctFrames + 0.3);
+  //   } else {
+  //     setCorrectFrames(correctFrames + 0.1);
+  //   }
+  // }, [similarity, totalFrames, correctFrames]);
 
   /* ============================================ RENDER ============================================ */
 
