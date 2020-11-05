@@ -45,7 +45,7 @@ const Testimonial = ({
 
   const sectionHeader = {
     title: 'Product Feedback',
-    paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
+    paragraph: 'Feedback is an important part of building a product from the various classes of target user base.'
   };
 
   return (
@@ -62,7 +62,7 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
+                    — The idea sounds really interesting and I think would be targetting a wide user base. The problem of not able to go to public gyms will be solved completely from the comfort of their home and I see a bright future for this product.  
                       </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
@@ -96,7 +96,7 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — I think this product is quite innovative! In this lockdown there has been a growth in obesity/fat accumulation, so this is surely going to help in similar future situations if any (Let's hope not). Even outside of lockdown, this is a great product for everyday life. It can even be implemented in automating exercises/movement process for robots and what not.
+                    — I think this product is quite innovative! In this lockdown there has been a growth in obesity/fat accumulation, so this is surely going to help in similar future situations if any. Even outside of lockdown, this is a great product for everyday life. It can even be implemented in automating exercises/movement process for robots and what not.
                       </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
