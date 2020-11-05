@@ -23,8 +23,8 @@ const Logo = ({
           <Image
             src={require('./../../../assets/images/fitme_logo.png')}
             alt="Open"
-            width={32}
-            height={32} />
+            width={40}
+            height={40} />
         </Link>
       </h1>
     </div>
