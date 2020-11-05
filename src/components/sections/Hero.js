@@ -35,7 +35,7 @@ const Hero = ({
   const closeModal = (e) => {
     e.preventDefault();
     setVideomodalactive(false);
-  }   
+  }
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -65,16 +65,18 @@ const Hero = ({
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-              Stay fit from the safety of your home with the help of our AI technology that helps you to #GetHealthierEveryDay
+                Stay fit from the safety of your home with the help of our AI technology that helps you to #GetHealthierEveryDay
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile href="https://cruip.com/">
-                    Get started
+                  <Button tag="a" color="primary" wideMobile href="">
+                    View On Github
                     </Button>
-                  <Button tag="a" color="dark" wideMobile href="https://github.com/cruip/open-react-template/">
+
+                  {/* <Button tag="a" color="dark" wideMobile href="">
                     View on Github
-                    </Button>
+                  </Button> */}
+
                 </ButtonGroup>
               </div>
             </div>
