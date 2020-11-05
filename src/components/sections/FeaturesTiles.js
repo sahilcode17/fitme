@@ -44,8 +44,8 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Build up the whole picture',
-    paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    title: "What's in it for you?",
+    paragraph: "Doesn't matter if you are a beginner or pro, there is something for all of you. You can get fit from the comfort of your home without additional hardware setup."
   };
 
   return (
