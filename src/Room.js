@@ -11,7 +11,7 @@ import { poseSimilarity } from "./posenet_utils";
 import POSE_MAP from "./data/moves"; // maps image names to pose objects.
 
 import "./Room.css";
-import {ProductConsumer, ProductProvider} from "./components/context"
+
 
 const SIMILARITY_THRESHOLD_EXCELLENT = 0.25;
 const SIMILARITY_THRESHOLD_GOOD = 0.55;
@@ -113,12 +113,8 @@ function Room() {
       </h1>
     );
   };
+
   return (
-    <ProductProvider>
-    <ProductConsumer>
-        {(value) => {
-            const {id,img,title}=value.detailProduct
-        return(
     <div className="room">
       <div className="header">
         <h1 className="title display">
@@ -133,7 +129,7 @@ function Room() {
             className="reference-img"
             ref={imageRef}
             alt="Yoga pose to copy."
-            src={img}
+            src={`poses/${imageName}`}
           />
         }
 
@@ -171,9 +167,5 @@ function Room() {
       </div>
     </div>
   );
-}}
-</ProductConsumer>
-</ProductProvider>
-)
 }
 export default Room;

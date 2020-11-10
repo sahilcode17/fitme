@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Room from "./Room";
 import LogPose from "./LogPose";
 // import { GLITCH_SOCKET_HTTP_HOST } from "./constants";
-import "./App.css";
+// import "./App.css";
 
 function Excercise() {
   return (
