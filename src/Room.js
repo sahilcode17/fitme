@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import {ProductConsumer,ProductProvider} from "./components/context"
+
 import { useToasts } from "react-toast-notifications";
 
 
@@ -11,17 +11,16 @@ import { poseSimilarity } from "./posenet_utils";
 import POSE_MAP from "./data/moves"; // maps image names to pose objects.
 
 import "./Room.css";
-
+import {ProductConsumer, ProductProvider} from "./components/context"
 
 const SIMILARITY_THRESHOLD_EXCELLENT = 0.25;
 const SIMILARITY_THRESHOLD_GOOD = 0.55;
 const SIMILARITY_THRESHOLD_OKAY = 0.8;
 
-let i=0;
-
 function Room() {
-  // const { addToast } = useToasts();
+  const { addToast } = useToasts();
   /* ============================================ INIT STATE ============================================ */
+
   // Game State
   const [ready, setReady] = useState(false);
   const [correctFrames, setCorrectFrames] = useState(0);
@@ -45,30 +44,14 @@ function Room() {
   }, []);
 
   // Submit Score
-  //const [i, seti] = useState(0);
-
-  // const poses = ['chairpose.jpg', 'dance.png', 'eagle.png', 'garland.png', 'gate.png', 'half-moon.png', 'parivrtta-trikonasana.png', 'tadasana.png', ' vrksasana.png'];
-  // useEffect(() => {
-  //   //seti(0);
-  //   // setCorrectFrames(0);
-  //   // setTotalFrames(0);
-  //   const score = Math.round((correctFrames / totalFrames) * 10000);
-  //   // console.log("scoring");
-  //   // console.log(correctFrames);
-  //   // console.log(totalFrames);
-  //   // console.log(score);
-  //   var changePoses = setInterval(function () {
-      
-  //     //seti(i+1);
-  //     i=i+1
-  //     console.log("i : ",i);
-  //     if (i === poses.length-1) {
-  //       clearInterval(changePoses);
-  //     }
-  //     setImageName(poses[i]);
-  //     setImagePose(POSE_MAP[poses[i]]);
-  //   }, 10000)
-  // }, []);
+  useEffect(() => {
+    const score = Math.round((correctFrames / totalFrames) * 10000);
+    console.log("scoring");
+    console.log(correctFrames);
+    console.log(totalFrames);
+    console.log(score);
+    // Should probably include round number here if we have the frame counts as dependencies
+  }, [correctFrames, totalFrames]);
 
   /* ============================================ TWILIO ============================================ */
 
@@ -92,18 +75,18 @@ function Room() {
   };
 
   // UpdateScore
-  // useEffect(() => {
-  //   setTotalFrames(totalFrames + 1);
-  //   if (similarity <= SIMILARITY_THRESHOLD_EXCELLENT) {
-  //     setCorrectFrames(correctFrames + 1);
-  //   } else if (similarity <= SIMILARITY_THRESHOLD_GOOD) {
-  //     setCorrectFrames(correctFrames + 0.6);
-  //   } else if (similarity <= SIMILARITY_THRESHOLD_OKAY) {
-  //     setCorrectFrames(correctFrames + 0.3);
-  //   } else {
-  //     setCorrectFrames(correctFrames + 0.1);
-  //   }
-  // }, [similarity, totalFrames, correctFrames]);
+  useEffect(() => {
+    setTotalFrames(totalFrames + 1);
+    if (similarity <= SIMILARITY_THRESHOLD_EXCELLENT) {
+      setCorrectFrames(correctFrames + 1);
+    } else if (similarity <= SIMILARITY_THRESHOLD_GOOD) {
+      setCorrectFrames(correctFrames + 0.6);
+    } else if (similarity <= SIMILARITY_THRESHOLD_OKAY) {
+      setCorrectFrames(correctFrames + 0.3);
+    } else {
+      setCorrectFrames(correctFrames + 0.1);
+    }
+  }, [similarity, totalFrames, correctFrames]);
 
   /* ============================================ RENDER ============================================ */
 
@@ -133,10 +116,9 @@ function Room() {
   return (
     <ProductProvider>
     <ProductConsumer>
-{(value) => {
-               const {img}=value.detailProduct
-  return (
-
+        {(value) => {
+            const {id,img,title}=value.detailProduct
+        return(
     <div className="room">
       <div className="header">
         <h1 className="title display">
@@ -180,7 +162,7 @@ function Room() {
                   onEstimate={(pose) => handlePose(pose)}
                   drawSkeleton={!ready}
                 />
-
+               
                 <DisplayScore />
               </>
             }
@@ -188,14 +170,10 @@ function Room() {
         </div>
       </div>
     </div>
-    )}}
-
-    </ProductConsumer>
-    </ProductProvider>
-          
-   
-
-
   );
+}}
+</ProductConsumer>
+</ProductProvider>
+)
 }
 export default Room;

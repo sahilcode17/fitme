@@ -7,7 +7,7 @@ import LogPose from "./LogPose";
 // import { GLITCH_SOCKET_HTTP_HOST } from "./constants";
 import "./App.css";
 
-function App() {
+function Excercise() {
   return (
     <div className="App">
       <ToastProvider>
@@ -16,20 +16,13 @@ function App() {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
-              <Route path="/room/">
+              <Route path="/room">
                 <Room />
               </Route>
               <Route path="/pose/:imageName">
                 <LogPose />
               </Route>
-              <Route path="/">
-                <div className="home">
-                  <Link to="/">
-                    <Room/>
-                  </Link>
-                </div>
-               
-              </Route>
+              
             </Switch>
            
           </div>
@@ -39,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default Excercise;
