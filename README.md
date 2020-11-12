@@ -1,68 +1,88 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FitMe
 
-## Available Scripts
 
-In the project directory, you can run:
+## Click on the video for demo
+[![Demo Link](https://img.youtube.com/vi/wFuXVfeVnHQ/0.jpg)](https://www.youtube.com/watch?v=wFuXVfeVnHQ)
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Problem Statement
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+With increasing cases of COVID 19, the world has come to a halt. Public places have been shut to avoid large gatherings. One such place is Gym, which has made it difficult for so many people to keep up with their fitness. Due to the unfortunate position of isolation, people are struggling with various health-related problems such as obesity, irregular sleep patterns, eye strain, mental stress, decreased immunity, and hence, are at a higher risk of getting infected with the Coronavirus. The impact of staying fit is huge and it helps to be sane with all the stress people have. Now as the gyms are closed and people don't have the required guidance, an alternative is needed. In this pursuit of adapting to modern norms, a solution with gamified concepts is needed to help people with their fitness routine and keep them motivated to exercise daily.
 
-### `yarn test`
+## What's our Solution?
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+FitMe is an AI-enabled fitness application which gives you the luxury of exercising or performing yoga asanas from the comfort of your home. 
 
-### `yarn build`
+With the help of tensorflow, we are able to estimate the user’s pose and compare it to the ideal pose to generate an accuracy score which helps the user determine if they are doing the exercise or asanas the right way or not. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This eliminates the need for any trainer or expert’s intervention to know the correct technique for performing yogasanas and rectifying them. You just need your laptop which has a webcam to run this awesome application! The massive library of poses makes it perfect for everyone, be it beginners or professionals. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Working Explained
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![FitMe Flowchart](https://user-images.githubusercontent.com/42516515/98796679-a8dd3980-2431-11eb-8c37-689aa42fd8b3.png)
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project Snippets
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![home](https://user-images.githubusercontent.com/42516515/98462694-24de4400-21dc-11eb-95c1-0cb571b87b46.PNG)
+![home2](https://user-images.githubusercontent.com/42516515/98462697-260f7100-21dc-11eb-9e01-4c5f4c5ae10e.PNG)
+![signup](https://user-images.githubusercontent.com/42516515/98462700-27d93480-21dc-11eb-8406-eea32e96c582.PNG)
+![login](https://user-images.githubusercontent.com/42516515/98462701-290a6180-21dc-11eb-84a3-de04a3efc734.PNG)
+![dashboard](https://user-images.githubusercontent.com/42516515/98462703-2ad42500-21dc-11eb-8454-aaecbbc2bee8.PNG)
+![main](https://user-images.githubusercontent.com/42516515/98462689-20b22680-21dc-11eb-825e-5d0450d12c06.PNG)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Requirements
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+For development, you will need Node.js and a node global package, Yarn, installed in your environement.
+You also need to setup Firebase before running the project.
 
-## Learn More
+### Node
+- #### Node installation on Windows
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
+Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- #### Node installation on Ubuntu
 
-### Code Splitting
+  You can install nodejs and npm easily with apt install, just run the following commands.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+      $ sudo apt install nodejs
+      $ sudo apt install npm
 
-### Analyzing the Bundle Size
+- #### Other Operating Systems
+  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+If the installation was successful, you should be able to run the following command.
 
-### Making a Progressive Web App
+    $ node --version
+    v8.11.3
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    $ npm --version
+    6.1.0
 
-### Advanced Configuration
+If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+    $ npm install npm -g
 
-### Deployment
+###
+### Yarn installation
+  After installing node, this project will need yarn too, so just run the following command.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+      $ npm install -g yarn
 
-### `yarn build` fails to minify
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Install
+
+    $ git clone https://github.com/Manthan109/fitMe.git
+    $ cd fitMe
+    $ yarn install  or  npm install
+
+
+## Running the project
+
+    $ yarn start or npm start
+
+## Simple build for production
+
+    $ yarn build or npm build
