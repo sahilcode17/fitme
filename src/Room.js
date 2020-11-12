@@ -32,26 +32,34 @@ function Room() {
   const [imagePose, setImagePose] = useState(POSE_MAP[imageName]);
 
   const [similarity, setSimilarity] = useState();
-
+const arr=[]
   /* ============================================ WEBSOCKETS ============================================ */
 
   // Log message output and change app state
   useEffect(() => {
     setCorrectFrames(0);
     setTotalFrames(0);
-    setImageName("tadasana.png");
-    setImagePose(POSE_MAP["tadasana.png"]);
+    setImageName("garland.png");
+    setImagePose(POSE_MAP["garland.png"]);
   }, []);
 
   // Submit Score
   useEffect(() => {
+      
     const score = Math.round((correctFrames / totalFrames) * 10000);
     console.log("scoring");
     console.log(correctFrames);
     console.log(totalFrames);
     console.log(score);
+    arr.fill(score)
     // Should probably include round number here if we have the frame counts as dependencies
   }, [correctFrames, totalFrames]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log('This will run after 1 second!')
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   /* ============================================ TWILIO ============================================ */
 
@@ -117,7 +125,7 @@ function Room() {
   return (
     <div className="room">
       <div className="header">
-        <h1 className="title display">
+        <h1  id='title'className="title display">
           <a href="/">FitMe</a>
         </h1>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -129,9 +137,11 @@ function Room() {
             className="reference-img"
             ref={imageRef}
             alt="Yoga pose to copy."
-            src={`poses/${imageName}`}
+            src={`${process.env.PUBLIC_URL}/poses/${imageName}`}
           />
         }
+            <h6 class="card-subtitle mb-2 text-muted">{arr[0]}</h6>
+
 
         <div className="local-participant">
           <div className="video-wrapper">

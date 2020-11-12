@@ -9,14 +9,14 @@ export const Imagesdata = [
     },
     {
         id: 2,
-        title: "chair Pose",
-        img: "poses/chairpose.jpg",
+        title: "Gate Pose",
+        img: "poses/gate.png",
         
       },
       {
         id: 3,
-        title: "Eagle.png",
-        img: "poses/eagle.png",
+        title: "Garland",
+        img: "poses/garland.png",
         
       },
       {
@@ -35,6 +35,18 @@ export const Imagesdata = [
         id: 6,
         title: "Half-moon",
         img: "poses/half-moon.png",
+        
+      },
+      {
+        id: 7,
+        title: "warrior-I",
+        img: "poses/warrior-I.png",
+        
+      },
+      {
+        id: 8,
+        title: "warrior-II",
+        img: "poses/warrior-II.png",
         
       }
 

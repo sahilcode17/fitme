@@ -111,3 +111,6 @@
 .mute-button {
     font-size: 20pt;
 }
+#title{
+    color: red !important;
+}
