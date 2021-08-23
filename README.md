@@ -20,6 +20,12 @@ This eliminates the need for any trainer or expert’s intervention to know the 
 
 ![FitMe Flowchart](https://user-images.githubusercontent.com/42516515/98796679-a8dd3980-2431-11eb-8c37-689aa42fd8b3.png)
 
+## Project Snippets
+
+![home](https://user-images.githubusercontent.com/42516515/98462694-24de4400-21dc-11eb-95c1-0cb571b87b46.PNG)
+![home2](https://user-images.githubusercontent.com/42516515/98462697-260f7100-21dc-11eb-9e01-4c5f4c5ae10e.PNG)
+![dashboard](https://user-images.githubusercontent.com/42516515/98462703-2ad42500-21dc-11eb-8454-aaecbbc2bee8.PNG)
+
 
 
 ## Requirements
@@ -63,17 +69,11 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ---
 
-## Install
+npm install
 
-    $ git clone https://github.com/Manthan109/fitMe.git
-    $ cd fitMe
-    $ yarn install  or  npm install
+# Run on http://localhost:3000
+npm start
 
-
-## Running the project
-
-    $ yarn start or npm start
-
-## Simple build for production
-
-    $ yarn build or npm build
+# Build for prod
+npm run build
+```
